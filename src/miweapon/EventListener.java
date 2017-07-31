@@ -25,14 +25,14 @@ Item item=damager.getInventory().getItemInHand();
 String name=item.getCustomName();
 if(MiWeaponAPI.getInstance().getData(name)){
 Config cfg=new Config(MiWeaponAPI.getInstance().getDataFolder()+"/"+name+".yml",Config.YAML);
-if(cfg.getString("pve").equals("¿ª")){
+if(cfg.getString("pve").equals("true")){
 if(event.getEntity() instanceof Player){
 return;
 }else{
 this.pv(event,damager,name);
 }
 }
-if(cfg.getString("pvp").equals("¿ª") && event.getEntity() instanceof Player){
+if(cfg.getString("pvp").equals("true") && event.getEntity() instanceof Player){
 this.pv(event,damager,name);
 }
 }
@@ -43,11 +43,11 @@ Random ran=new Random();
 int rand=ran.nextInt(101);
 Config cfg=new Config(MiWeaponAPI.getInstance().getDataFolder()+"/"+name+".yml",Config.YAML);
 int atk=cfg.getInt("ATK");
-int xx=cfg.getInt("ÎüÑª");
-int xxl=cfg.getInt("ÎüÑªÂÊ");
-int bj=cfg.getInt("±©»÷");
-int bjl=cfg.getInt("±©»÷ÂÊ");
-int fire=cfg.getInt("È¼ÉÕ");
+int xx=cfg.getInt("å¸è¡€");
+int xxl=cfg.getInt("å¸è¡€ç‡");
+int bj=cfg.getInt("æš´å‡»");
+int bjl=cfg.getInt("æš´å‡»ç‡");
+int fire=cfg.getInt("ç‡ƒçƒ§");
 event.getEntity().setOnFire(fire);
 if(rand<=xxl){
 damager.setHealth(damager.getHealth()+xx);
@@ -58,7 +58,7 @@ event.setDamage(event.getDamage()+bj);
 }else{
 event.setDamage(event.getDamage()+atk);
 }
-if(cfg.getString("À×»÷").equals("¿ª")){
+if(cfg.getString("é›·å‡»").equals("å¼€")){
 CompoundTag nbt=new CompoundTag();
 nbt.putList(new ListTag<DoubleTag>("Pos").add(new DoubleTag("",0)).add(new DoubleTag("",0)).add(new DoubleTag("",0)));
 nbt.putList(new ListTag<DoubleTag>("Motion").add(new DoubleTag("",0)).add(new DoubleTag("",0)).add(new DoubleTag("",0)));
