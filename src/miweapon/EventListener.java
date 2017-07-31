@@ -25,14 +25,14 @@ Item item=damager.getInventory().getItemInHand();
 String name=item.getCustomName();
 if(MiWeaponAPI.getInstance().getData(name)){
 Config cfg=new Config(MiWeaponAPI.getInstance().getDataFolder()+"/"+name+".yml",Config.YAML);
-if(cfg.getString("pve").equals("true")){
+if(cfg.getString("pve").equals("开")){
 if(event.getEntity() instanceof Player){
 return;
 }else{
 this.pv(event,damager,name);
 }
 }
-if(cfg.getString("pvp").equals("true") && event.getEntity() instanceof Player){
+if(cfg.getString("pvp").equals("开") && event.getEntity() instanceof Player){
 this.pv(event,damager,name);
 }
 }
