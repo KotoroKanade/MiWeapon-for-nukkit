@@ -1,0 +1,15 @@
+name: MiWeapon
+main: mikasa.nk.MiWeapon.Main
+api: ["1.0.0"]
+version: 1.0.0
+load: POSTWORLD
+author: mikasa
+commands:
+ miweapon:
+  usage: /miweapon
+  description: mikasa
+  permission: MiWeapon.miweapon
+permissions:
+ MiWeapon.miweapon:
+  default: op
+  description: wcnm
