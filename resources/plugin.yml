@@ -1,5 +1,5 @@
 name: MiWeapon
-main: mikasa.nk.MiWeapon.Main
+main: miweapon.MiWeapon
 api: ["1.0.0"]
 version: 1.0.0
 load: POSTWORLD
